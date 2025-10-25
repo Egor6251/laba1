@@ -1,0 +1,60 @@
+void main() {
+    Scanner scanner = new Scanner(System.in);
+
+
+    String[] lastNames = {"Иванов", "Петров", "Сидорова", "Козлов"};
+    String[] firstNames = {"Иван", "Петр", "Мария", "Алексей"};
+    int[] groups = {101, 102, 101, 103};
+
+
+    System.out.println("Поиск студента:");
+    System.out.println("1 - по фамилии");
+    System.out.println("2 - по имени");
+    System.out.println("3 - по группе");
+    System.out.print("Выберите вариант: ");
+
+    int choice = scanner.nextInt();
+    scanner.nextLine();
+
+
+    if (choice == 1) {
+        System.out.print("Введите фамилию: ");
+        String searchLastName = scanner.nextLine();
+
+        System.out.println("\nРезультаты поиска:");
+        for (int i = 0; i < lastNames.length; i++) {
+            if (lastNames[i].equalsIgnoreCase(searchLastName)) {
+                System.out.println(lastNames[i] + " " + firstNames[i] + ", группа " + groups[i]);
+            }
+        }
+
+    } else if (choice == 2) {
+        System.out.print("Введите имя: ");
+        String searchFirstName = scanner.nextLine();
+
+        System.out.println("\nРезультаты поиска:");
+        for (int i = 0; i < firstNames.length; i++) {
+            if (firstNames[i].equalsIgnoreCase(searchFirstName)) {
+                System.out.println(lastNames[i] + " " + firstNames[i] + ", группа " + groups[i]);
+            }
+        }
+
+    } else if (choice == 3) {
+        System.out.print("Введите группу: ");
+        int searchGroup = scanner.nextInt();
+
+        System.out.println("\nРезультаты поиска:");
+        for (int i = 0; i < groups.length; i++) {
+            if (groups[i] == searchGroup) {
+                System.out.println(lastNames[i] + " " + firstNames[i] + ", группа " + groups[i]);
+            }
+        }
+
+    } else {
+        System.out.println("Неверный выбор!");
+    }
+
+
+
+
+}

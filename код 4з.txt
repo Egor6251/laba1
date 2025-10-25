@@ -1,0 +1,24 @@
+void main() {
+    Scanner scanner = new Scanner(System.in);
+    System.out.print("Введите количество строк: ");
+    int rows = scanner.nextInt();
+    System.out.print("Введите количество столбцов: ");
+    int cols = scanner.nextInt();
+
+    int matrix[][] = new int[rows][cols];
+
+    Random random = new Random();
+
+    for (int i = 0; i < rows; i++) {
+        for (int j = 0; j < cols; j++){
+            matrix[i][j]= random.nextInt(100);
+        }
+    }
+    int rowSum = 0;
+    for (int i = 0; i < rows; i++) {
+        for (int j = 0; j < cols; j++) {
+            rowSum += matrix[i][j];
+        }
+    }
+    System.out.print("Сумма по строкам: " + rowSum);
+}
